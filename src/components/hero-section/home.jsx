@@ -142,7 +142,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-blue-100">
       {/* Hero Section */}
-      <section className="relative h-[72vh] flex items-center">
+      <section className="relative h-[72vh] flex items-center bg-blue-100">
         <motion.div
           className="absolute inset-0 z-0 w-full h-full md:h-[500px] lg:h-[600px]"
           style={{ y: heroY, opacity: heroOpacity }}
@@ -205,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* Mission & Vision Section */}
-      <AnimatedSection className="py-10 bg-white">
+      <AnimatedSection className="py-10 bg-blue-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -250,8 +250,8 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Core Values Section */}
-      <AnimatedSection className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <AnimatedSection className="py-20 bg-blue-100">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
           <motion.div
             className="text-center mb-16"
             variants={fadeInUp}
@@ -268,14 +268,14 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 "
             variants={staggerChildren}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
                 <CardContent className="p-6">
                   <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
                     <HeartPulse className="h-6 w-6 text-blue-600" />
@@ -289,7 +289,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
                 <CardContent className="p-6">
                   <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
                     <Award className="h-6 w-6 text-blue-600" />
@@ -303,7 +303,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
                 <CardContent className="p-6">
                   <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
                     <Microscope className="h-6 w-6 text-blue-600" />
@@ -320,7 +320,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* About Section */}
-      <AnimatedSection className="py-20 bg-white">
+      <AnimatedSection className="py-20 bg-blue-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -364,10 +364,10 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Team Section */}
-      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-slate-50">
+      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-blue-100">
         <div className="container px-4 mx-auto">
           <motion.div
-            className="max-w-3xl mx-auto text-center mb-16"
+            className="max-w-3xl mx-auto text-center mb-12"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
@@ -381,9 +381,9 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="relative w-full">
+          <div className="relative w-full lg:text-xl text-sm">
             <motion.div
-              className="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+              className="flex lg:space-x-6 space-x-2 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
               variants={staggerChildren}
               initial="hidden"
               whileInView="visible"
@@ -394,7 +394,7 @@ export default function Home() {
                   key={index}
                   variants={fadeIn}
                   custom={index}
-                  className="group relative flex-shrink-0 w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+                  className="group relative flex-shrink-0 w-[150px] lg:w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
                 >
                   <div className="aspect-square overflow-hidden bg-slate-100">
                     <Image
@@ -414,7 +414,7 @@ export default function Home() {
                         <Linkedin className="h-4 w-4" />
                       </button>
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-800">{member.name}</h3>
+                    <h3 className="lg:text-xl font-semibold text-slate-800">{member.name}</h3>
                     <p className="text-primary mt-1">{member.title}</p>
                     <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
                       <button className="flex items-center text-sm text-slate-600 hover:text-primary">
@@ -478,7 +478,7 @@ export default function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <AnimatedSection className="py-20 bg-white">
+      <AnimatedSection className="py-20 bg-blue-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -527,7 +527,7 @@ export default function Home() {
                 custom={index}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-blue-200">
                   <CardContent className="p-6">
                     <div className="flex flex-col h-full">
                       <motion.div
@@ -567,7 +567,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-20 bg-gray-50">
+      <AnimatedSection className="py-20 bg-blue-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="bg-blue-600 rounded-xl p-8 md:p-12 shadow-xl"
