@@ -5,7 +5,7 @@ import HeaderComponent from "@/components/header-section/header";
 
 export default function Home() {
   return (
-    <div className="app">
+    <div>
       <HeaderComponent/>
       <main>
         <HomeComponent/>
