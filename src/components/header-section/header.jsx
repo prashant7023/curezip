@@ -57,7 +57,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8 bg-white">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.submenu ? (
@@ -118,7 +118,7 @@ export default function Header() {
                 <SheetTitle>Navigation Menu</SheetTitle>
               </VisuallyHidden>
 
-              <div className="flex flex-col h-full ml-5">
+              <div className="flex flex-col h-full pl-5 bg-white">
                 {/* Logo in Mobile Menu */}
                 <div className="flex items-center justify-between mb-8 pt-4">
                   <div className="relative h-10 w-40">
@@ -132,7 +132,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Navigation Links */}
-                <nav className="flex flex-col space-y-4">
+                <nav className="flex flex-col space-y-4 bg-white">
                   {navItems.map((item) => (
                     <div key={item.name}>
                       {item.submenu ? (
