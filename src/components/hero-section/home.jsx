@@ -140,7 +140,7 @@ export default function Home() {
   }, [statsInView])
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[72vh] flex items-center">
         <motion.div
