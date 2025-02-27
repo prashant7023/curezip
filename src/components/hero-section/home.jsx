@@ -142,7 +142,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center">
+      <section className="relative h-[72vh] flex items-center">
         <motion.div
           className="absolute inset-0 z-0 w-full h-full md:h-[500px] lg:h-[600px]"
           style={{ y: heroY, opacity: heroOpacity }}
