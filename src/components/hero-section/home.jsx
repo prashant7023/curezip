@@ -140,7 +140,7 @@ export default function Home() {
   }, [statsInView])
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-blue-100">
       {/* Hero Section */}
       <section className="relative h-[72vh] flex items-center">
         <motion.div
@@ -187,7 +187,7 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className="bg-emerald-600 hover:bg-emerald-700 transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
+                className="bg-blue-600 hover:bg-blue-700 transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
               >
                 Discover Our Products
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -217,7 +217,7 @@ export default function Home() {
               <motion.h2 className="text-3xl font-bold mb-6 text-gray-900" variants={fadeInUp}>
                 Our Vision
               </motion.h2>
-              <motion.div className="h-1 w-20 bg-emerald-600 mb-6" variants={fadeInUp}></motion.div>
+              <motion.div className="h-1 w-20 bg-blue-600 mb-6" variants={fadeInUp}></motion.div>
               <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
                 We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
                 of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
@@ -260,7 +260,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Core Values</h2>
-            <div className="h-1 w-20 bg-emerald-600 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               At CureZip Pharma, our values guide everything we do - from research and development to manufacturing and
               distribution.
@@ -277,8 +277,8 @@ export default function Home() {
             <motion.div variants={fadeInUp}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-                    <HeartPulse className="h-6 w-6 text-emerald-600" />
+                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
+                    <HeartPulse className="h-6 w-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Patient-Centric</h3>
                   <p className="text-gray-700">
@@ -291,8 +291,8 @@ export default function Home() {
             <motion.div variants={fadeInUp}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-                    <Award className="h-6 w-6 text-emerald-600" />
+                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
+                    <Award className="h-6 w-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Excellence</h3>
                   <p className="text-gray-700">
@@ -305,8 +305,8 @@ export default function Home() {
             <motion.div variants={fadeInUp}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <div className="bg-emerald-100 p-3 rounded-full w-fit mb-4">
-                    <Microscope className="h-6 w-6 text-emerald-600" />
+                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
+                    <Microscope className="h-6 w-6 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Innovation</h3>
                   <p className="text-gray-700">
@@ -331,7 +331,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <Image
-                src="/placeholder.svg?height=800&width=1200"
+                src="/Image-2.jpg?height=800&width=1200"
                 alt="CureZip Pharma facility"
                 fill
                 className="object-cover"
@@ -345,7 +345,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">The Brand</h2>
-              <div className="h-1 w-20 bg-emerald-600 mb-6"></div>
+              <div className="h-1 w-20 bg-blue-600 mb-6"></div>
               <p className="text-lg text-gray-700 mb-6">
                 CureZip Pharma is a Gurugram based pharmaceutical company established in 2020 with the vision of making
                 world-class affordable medicines.
@@ -430,7 +430,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Stats Section */}
-      <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-emerald-700 text-white">
+      <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-blue-700 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center"
@@ -488,7 +488,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">What Healthcare Professionals Say</h2>
-            <div className="h-1 w-20 bg-emerald-600 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Trusted by healthcare professionals across the country
             </p>
@@ -531,7 +531,7 @@ export default function Home() {
                   <CardContent className="p-6">
                     <div className="flex flex-col h-full">
                       <motion.div
-                        className="text-emerald-600 mb-4"
+                        className="text-blue-600 mb-4"
                         initial={{ rotate: -10, opacity: 0 }}
                         whileInView={{ rotate: 0, opacity: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -570,7 +570,7 @@ export default function Home() {
       <AnimatedSection className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-emerald-600 rounded-xl p-8 md:p-12 shadow-xl"
+            className="bg-blue-600 rounded-xl p-8 md:p-12 shadow-xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -590,12 +590,12 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100">
+                    <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                       Contact Our Team
                     </Button>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="lg" variant="outline" className="border-white text-white hover:bg-emerald-700">
+                    <Button size="lg" variant="outline" className="bg-blue-600 text-white hover:bg-blue-600">
                       Download Brochure
                     </Button>
                   </motion.div>
@@ -609,7 +609,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/Healthcare.png?height=600&width=800"
                   alt="Healthcare professionals"
                   fill
                   className="object-cover"
@@ -622,7 +622,7 @@ export default function Home() {
 
       {/* Scroll to top button */}
       <motion.button
-        className={`fixed bottom-8 right-8 p-3 rounded-full bg-emerald-600 text-white shadow-lg z-50 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed bottom-8 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           } transition-opacity duration-300`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.1 }}

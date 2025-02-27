@@ -65,7 +65,7 @@ export default function Header() {
                     <button
                       className={`flex items-center text-base font-medium ${
                         isScrolled ? "text-gray-800" : "text-white"
-                      } hover:text-emerald-600 transition-colors`}
+                      } hover:text-blue-600 transition-colors`}
                     >
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
@@ -76,7 +76,7 @@ export default function Header() {
                           <Link
                             key={subitem.name}
                             href={subitem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-600"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
                           >
                             {subitem.name}
                           </Link>
@@ -89,7 +89,7 @@ export default function Header() {
                     href={item.href}
                     className={`text-base font-medium ${
                       isScrolled ? "text-gray-800" : "text-white"
-                    } hover:text-emerald-600 transition-colors`}
+                    } hover:text-blue-600 transition-colors`}
                   >
                     {item.name}
                   </Link>
@@ -100,7 +100,7 @@ export default function Header() {
 
           {/* Contact Button */}
           <div className="hidden lg:block">
-            <Button className="bg-emerald-600 hover:bg-emerald-700 transition duration-200">
+            <Button className="bg-blue-600 hover:bg-blue-700 transition duration-200">
               <Phone className="mr-2 h-4 w-4" />
               Get in Touch
             </Button>
@@ -138,12 +138,12 @@ export default function Header() {
                       {item.submenu ? (
                         <div className="space-y-2">
                           <div className="font-medium text-lg text-gray-900">{item.name}</div>
-                          <div className="pl-4 space-y-2 border-l-2 border-emerald-200">
+                          <div className="pl-4 space-y-2 border-l-2 border-blue-200">
                             {item.submenu.map((subitem) => (
                               <Link
                                 key={subitem.name}
                                 href={subitem.href}
-                                className="block text-gray-600 hover:text-emerald-600"
+                                className="block text-gray-600 hover:text-blue-600"
                               >
                                 {subitem.name}
                               </Link>
@@ -153,7 +153,7 @@ export default function Header() {
                       ) : (
                         <Link
                           href={item.href}
-                          className="font-medium text-lg text-gray-900 hover:text-emerald-600"
+                          className="font-medium text-lg text-gray-900 hover:text-blue-600"
                         >
                           {item.name}
                         </Link>
@@ -164,7 +164,7 @@ export default function Header() {
 
                 {/* Mobile Contact Button */}
                 <div className="mt-auto pt-10 pb-3 m-5">
-                  <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
                     <Phone className="mr-2 h-5 w-5" />
                     Get in Touch
                   </Button>
