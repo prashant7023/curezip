@@ -3,22 +3,17 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, ChevronDown, Phone } from "lucide-react"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -43,7 +38,9 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+      }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -62,11 +59,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <div key={item.name} className="relative group outline-none">
+              <div key={item.name} className="relative group">
                 {item.submenu ? (
                   <>
                     <button
-                      className={`outline-none flex items-center text-base font-medium ${isScrolled ? "text-gray-800" : "text-white"} hover:text-emerald-600 transition-colors`}
+                      className={`flex items-center text-base font-medium ${
+                        isScrolled ? "text-gray-800" : "text-white"
+                      } hover:text-emerald-600 transition-colors`}
                     >
                       {item.name}
                       <ChevronDown className="ml-1 h-4 w-4" />
@@ -88,7 +87,9 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`text-base font-medium ${isScrolled ? "text-gray-800" : "text-white"} hover:text-emerald-600 transition-colors`}
+                    className={`text-base font-medium ${
+                      isScrolled ? "text-gray-800" : "text-white"
+                    } hover:text-emerald-600 transition-colors`}
                   >
                     {item.name}
                   </Link>
@@ -99,7 +100,7 @@ export default function Header() {
 
           {/* Contact Button */}
           <div className="hidden lg:block">
-            <Button className="bg-emerald-600 hover:bg-emerald-700">
+            <Button className="bg-emerald-600 hover:bg-emerald-700 transition duration-200">
               <Phone className="mr-2 h-4 w-4" />
               Get in Touch
             </Button>
@@ -113,17 +114,24 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col h-full">
+              <VisuallyHidden>
+                <SheetTitle>Navigation Menu</SheetTitle>
+              </VisuallyHidden>
+
+              <div className="flex flex-col h-full ml-5">
+                {/* Logo in Mobile Menu */}
                 <div className="flex items-center justify-between mb-8 pt-4">
                   <div className="relative h-10 w-40">
                     <Image
-                      src="/placeholder.svg?height=100&width=200"
+                      src="/Curezip-logo.png?height=100&width=200"
                       alt="CureZip Pharma Logo"
                       fill
                       className="object-contain"
                     />
                   </div>
                 </div>
+
+                {/* Mobile Navigation Links */}
                 <nav className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <div key={item.name}>
@@ -143,14 +151,19 @@ export default function Header() {
                           </div>
                         </div>
                       ) : (
-                        <Link href={item.href} className="font-medium text-lg text-gray-900 hover:text-emerald-600">
+                        <Link
+                          href={item.href}
+                          className="font-medium text-lg text-gray-900 hover:text-emerald-600"
+                        >
                           {item.name}
                         </Link>
                       )}
                     </div>
                   ))}
                 </nav>
-                <div className="mt-auto pt-10">
+
+                {/* Mobile Contact Button */}
+                <div className="mt-auto pt-10 pb-3 m-5">
                   <Button className="w-full bg-emerald-600 hover:bg-emerald-700">
                     <Phone className="mr-2 h-5 w-5" />
                     Get in Touch
@@ -164,4 +177,3 @@ export default function Header() {
     </header>
   )
 }
-

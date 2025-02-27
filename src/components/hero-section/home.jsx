@@ -143,15 +143,19 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center">
-        <motion.div className="absolute inset-0 z-0" style={{ y: heroY, opacity: heroOpacity }}>
+        <motion.div
+          className="absolute inset-0 z-0 w-full h-full md:h-[500px] lg:h-[600px]"
+          style={{ y: heroY, opacity: heroOpacity }}
+        >
           <Image
             src="/img1.jpeg"
             alt="Healthcare professional holding medication"
             fill
-            className="object-cover brightness-[0.7]"
+            className="object-cover brightness-[0.7] md:brightness-100 lg:brightness-[0.8]"
             priority
           />
         </motion.div>
+
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-3xl text-white"
@@ -201,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* Mission & Vision Section */}
-      <AnimatedSection className="py-20 bg-white">
+      <AnimatedSection className="py-10 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -225,14 +229,22 @@ export default function Home() {
               </motion.p>
             </motion.div>
             <motion.div
-              className="relative h-[400px] w-[600px] rounded-lg overflow-hidden shadow-2xl"
+              className="relative w-full max-w-[600px] h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-2xl"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <Image src="/main.jpg" alt="Our vision" fill className="object-cover drop-shadow-2xl" />
+              <Image
+                src="/main.jpg"
+                alt="Our vision"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 600px"
+                className="object-cover drop-shadow-2xl"
+                priority
+              />
             </motion.div>
+
           </div>
         </div>
       </AnimatedSection>
@@ -382,7 +394,7 @@ export default function Home() {
                   key={index}
                   variants={fadeIn}
                   custom={index}
-                  className="group relative flex-shrink-0 w-[280px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+                  className="group relative flex-shrink-0 w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
                 >
                   <div className="aspect-square overflow-hidden bg-slate-100">
                     <Image
@@ -418,10 +430,10 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Stats Section */}
-      <div ref={statsRef} className="py-20 bg-emerald-700 text-white">
+      <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-emerald-700 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center"
             variants={staggerChildren}
             initial="hidden"
             whileInView="visible"
@@ -431,16 +443,15 @@ export default function Home() {
               { end: 50, label: "Products", suffix: "+" },
               { end: 15, label: "States Covered", suffix: "+" },
               { end: 200, label: "Healthcare Partners", suffix: "+" },
-              { end: 100000, label: "Patients Helped", suffix: "K+" },
+              { end: 100, label: "Patients Helped", suffix: "K+" },
             ].map((stat, index) => {
-              // Create a unique ID for each counter
               const counterId = `counter-${index}`
 
               return (
-                <motion.div key={index} variants={fadeInUp}>
+                <motion.div key={index} variants={fadeInUp} className="flex flex-col items-center">
                   <motion.div
                     id={counterId}
-                    className="text-4xl font-bold mb-2"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -458,7 +469,7 @@ export default function Home() {
                       />
                     )}
                   </motion.div>
-                  <div className="text-xl">{stat.label}</div>
+                  <div className="text-sm sm:text-base md:text-lg">{stat.label}</div>
                 </motion.div>
               )
             })}
@@ -611,9 +622,8 @@ export default function Home() {
 
       {/* Scroll to top button */}
       <motion.button
-        className={`fixed bottom-8 right-8 p-3 rounded-full bg-emerald-600 text-white shadow-lg z-50 ${
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        } transition-opacity duration-300`}
+        className={`fixed bottom-8 right-8 p-3 rounded-full bg-emerald-600 text-white shadow-lg z-50 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+          } transition-opacity duration-300`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
