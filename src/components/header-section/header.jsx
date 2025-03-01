@@ -100,7 +100,7 @@ export default function Header() {
 
           {/* Contact Button */}
           <div className="hidden lg:block">
-            <Button className="bg-[#3674B5] hover:bg-blue-700 transition duration-200">
+            <Button className="bg-[#3674B5] hover:bg-[#266cb6] transition duration-200">
               <Phone className="mr-2 h-4 w-4" />
               Get in Touch
             </Button>
@@ -164,7 +164,7 @@ export default function Header() {
 
                 {/* Mobile Contact Button */}
                 <div className="mt-auto pt-10 pb-3 m-5">
-                  <Button className="w-full bg-[#3674B5] hover:bg-blue-700">
+                  <Button className="w-full bg-[#3674B5] hover:bg-[#266cb6]">
                     <Phone className="mr-2 h-5 w-5" />
                     Get in Touch
                   </Button>
