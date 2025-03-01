@@ -417,7 +417,6 @@ export default function Home() {
               <h3 className="lg:text-lg font-semibold text-slate-800">{member.name}</h3>
               <p className="text-primary mt-1">{member.title}</p>
 
-              {/* Icons BELOW name on mobile, moved to top-right on hover for larger screens */}
               <div className="flex justify-center lg:absolute lg:-top-10 lg:right-3 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-27 lg:group-hover:opacity-100">
                 {/* Mail Link */}
                 <Link
@@ -464,9 +463,9 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             {[
-              { end: 50, label: "Products", suffix: "+" },
-              { end: 15, label: "States Covered", suffix: "+" },
-              { end: 200, label: "Healthcare Partners", suffix: "+" },
+              { end: 40, label: "Products", suffix: "+" },
+              { end: 10, label: "States Covered", suffix: "+" },
+              { end: 150, label: "Healthcare Partners", suffix: "+" },
               { end: 100, label: "Patients Helped", suffix: "K+" },
             ].map((stat, index) => {
               const counterId = `counter-${index}`
@@ -626,7 +625,7 @@ export default function Home() {
                 </div>
               </motion.div>
               <motion.div
-                className="relative max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden"
+                className="relative max-w-full h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}

@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, ChevronDown, Phone } from "lucide-react"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [openSubmenus, setOpenSubmenus] = useState({})
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +59,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 ">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.submenu ? (
@@ -100,10 +102,13 @@ export default function Header() {
 
           {/* Contact Button */}
           <div className="hidden lg:block">
-            <Button className="bg-[#3674B5] hover:bg-[#266cb6] transition duration-200">
+            <Link
+              href="#contact"
+              className="flex items-center px-4 py-2 text-white bg-[#3674B5] hover:bg-[#266cb6] rounded-md transition duration-200 shadow-md"
+            >
               <Phone className="mr-2 h-4 w-4" />
               Get in Touch
-            </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,23 +137,49 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Navigation Links */}
-                <nav className="flex flex-col space-y-4 bg-white">
+                <nav className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <div key={item.name}>
                       {item.submenu ? (
                         <div className="space-y-2">
-                          <div className="font-medium text-lg text-gray-900">{item.name}</div>
-                          <div className="pl-4 space-y-2 border-l-2 border-blue-200">
-                            {item.submenu.map((subitem) => (
-                              <Link
-                                key={subitem.name}
-                                href={subitem.href}
-                                className="block text-gray-600 hover:text-[#3674B5]"
+                          <button
+                            onClick={() =>
+                              setOpenSubmenus((prev) => ({
+                                ...prev,
+                                [item.name]: !prev[item.name],
+                              }))
+                            }
+                            className="flex items-center justify-between font-medium text-lg text-gray-900 hover:text-[#3674B5] w-full"
+                          >
+                            {item.name}
+                            <ChevronDown
+                              className={`h-4 w-4 transition-transform duration-100 ${
+                                openSubmenus[item.name] ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {openSubmenus[item.name] && (
+                              <motion.div
+                                key="submenu"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="pl-4 space-y-2 border-l-2 border-blue-200 overflow-hidden"
                               >
-                                {subitem.name}
-                              </Link>
-                            ))}
-                          </div>
+                                {item.submenu.map((subitem) => (
+                                  <Link
+                                    key={subitem.name}
+                                    href={subitem.href}
+                                    className="block text-gray-600 hover:text-[#3674B5]"
+                                  >
+                                    {subitem.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       ) : (
                         <Link
@@ -164,10 +195,13 @@ export default function Header() {
 
                 {/* Mobile Contact Button */}
                 <div className="mt-auto pt-10 pb-3 m-5">
-                  <Button className="w-full bg-[#3674B5] hover:bg-[#266cb6]">
+                  <Link
+                    href="#contact"
+                    className="flex items-center justify-center w-full px-4 py-3 text-white bg-[#3674B5] hover:bg-[#266cb6] rounded-md transition duration-200 shadow-md"
+                  >
                     <Phone className="mr-2 h-5 w-5" />
                     Get in Touch
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </SheetContent>

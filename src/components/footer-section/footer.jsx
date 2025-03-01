@@ -6,7 +6,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "luc
 
 export default function Footer() {
   return (
-    <footer className=" text-white bg-zinc-900 w-full">
+    <footer id="contact" className=" text-white bg-zinc-900 w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
