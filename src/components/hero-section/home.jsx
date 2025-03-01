@@ -94,31 +94,43 @@ export default function Home() {
       name: "Mr. Gaurav Singh",
       title: "Managing Director",
       image: "",
+      mail: "",
+      linkedin: "",
     },
     {
       name: "Mr. Abhishek Kumar",
       title: "Director",
       image: "",
+      mail: "",
+      linkedin: "",
     },
     {
       name: "Mr. Amit Kumar",
       title: "Marketing Head",
       image: "",
+      mail: "",
+      linkedin: "",
     },
     {
       name: "Dr. Pranay Pandey",
       title: "Product Consultant",
       image: "",
+      mail: "",
+      linkedin: "",
     },
     {
       name: "Mrs. Monika Singh",
       title: "HR Head",
       image: "",
+      mail: "",
+      linkedin: "",
     },
     {
       name: "Miss. Priya Bharti",
       title: "IT Consultant",
       image: "",
+      mail: "",
+      linkedin: "",
     },
   ]
 
@@ -141,109 +153,109 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f2f9fd]">
-   {/* Hero Section */}
-<section className="relative h-screen flex items-center bg-[#f2f9fd]">
-  <div 
-    className="absolute inset-0 z-0 w-full h-full bg-fixed"
-    style={{
-      backgroundImage: "url('/main.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}
-  ></div>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center bg-[#f2f9fd]">
+        <div
+          className="absolute inset-0 z-0 w-full h-full bg-fixed"
+          style={{
+            backgroundImage: "url('/main.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
 
-  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div
-      className="max-w-3xl text-white"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <motion.h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        Caring Beyond Healthcare
-      </motion.h1>
-      <motion.p
-        className="text-xl md:text-2xl mb-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        Making world-class affordable medicines accessible to everyone
-      </motion.p>
-      <motion.div
-        className="flex flex-col sm:flex-row gap-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-      >
-        <Link
-          href="/products"
-          className="bg-[#3674B5] hover:bg-[#2b6fb7] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
-        >
-          Discover Our Products
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="max-w-3xl text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Caring Beyond Healthcare
+            </motion.h1>
+            <motion.p
+              className="text-xl md:text-2xl mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Making world-class affordable medicines accessible to everyone
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Link
+                href="/products"
+                className="bg-[#3674B5] hover:bg-[#2b6fb7] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
+              >
+                Discover Our Products
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
 
-        <Link
-          href="/about"
-          className="bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
-        >
-          About Us
-        </Link>
-      </motion.div>
-    </motion.div>
-  </div>
-</section>
+              <Link
+                href="/about"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
+              >
+                About Us
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-{/* Mission & Vision Section */}
-<AnimatedSection className="py-20 bg-[#f2f9fd] relative">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <motion.div
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <motion.h2 className="text-3xl font-bold mb-6 text-gray-900" variants={fadeInUp}>
-          Our Vision
-        </motion.h2>
-        <motion.div className="h-1 w-20 bg-[#3674B5] mb-6" variants={fadeInUp}></motion.div>
-        <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
-          We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
-          of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
-          anything.
-        </motion.p>
-        <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
-          And that is why our pursuit of helping people achieve their best health at every life stage will never
-          end. This is how we put that belief into practice every and each day.
-        </motion.p>
-      </motion.div>
-      <motion.div
-        className="relative w-full max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-2xl"
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <Image
-          src="/image2.png"
-          alt="Our vision"
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 600px"
-          className="object-cover drop-shadow-2xl"
-          priority
-        />
-      </motion.div>
-    </div>
-  </div>
-</AnimatedSection>
+      {/* Mission & Vision Section */}
+      <AnimatedSection className="py-20 bg-[#f2f9fd] relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <motion.h2 className="text-3xl font-bold mb-6 text-gray-900" variants={fadeInUp}>
+                Our Vision
+              </motion.h2>
+              <motion.div className="h-1 w-20 bg-[#3674B5] mb-6" variants={fadeInUp}></motion.div>
+              <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
+                We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
+                of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
+                anything.
+              </motion.p>
+              <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
+                And that is why our pursuit of helping people achieve their best health at every life stage will never
+                end. This is how we put that belief into practice every and each day.
+              </motion.p>
+            </motion.div>
+            <motion.div
+              className="relative w-full max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-2xl"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <Image
+                src="/image2.png"
+                alt="Our vision"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 600px"
+                className="object-cover drop-shadow-2xl"
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
 
 
       {/* Core Values Section */}
@@ -360,71 +372,87 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Team Section */}
-      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
-        <div className="container px-4 mx-auto">
-          <motion.div
-            className="max-w-3xl mx-auto text-center mb-12"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <h2 className="text-4xl font-bold tracking-tight text-slate-800 mb-6">Our Team</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              The management team of Curezip Pharma came together with a common motive to serve humanity. The team is
-              keen to discover new possibilities and are always eager to adopt innovative approaches. Individuals of our
-              team play critical roles in the clinical discovery of several major drugs.
-            </p>
-          </motion.div>
+{/* Team Section */}
+<AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
+  <div className="container px-4 mx-auto">
+    <motion.div
+      className="max-w-3xl mx-auto text-center mb-12"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      <h2 className="text-4xl font-bold tracking-tight text-slate-800 mb-6">Our Team</h2>
+      <p className="text-lg text-slate-600 leading-relaxed">
+        The management team of Curezip Pharma came together with a common motive to serve humanity. The team is
+        keen to discover new possibilities and are always eager to adopt innovative approaches. Individuals of our
+        team play critical roles in the clinical discovery of several major drugs.
+      </p>
+    </motion.div>
 
-          <div className="relative w-full lg:text-xl text-sm">
-            <motion.div
-              className="flex lg:space-x-6 space-x-2 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
-              variants={staggerChildren}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeIn}
-                  custom={index}
-                  className="group relative flex-shrink-0 w-[150px] lg:w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+    <div className="relative w-full lg:text-lg text-sm">
+      <motion.div
+        className="flex lg:space-x-6 space-x-2 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+        variants={staggerChildren}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {teamMembers.map((member, index) => (
+          <motion.div
+            key={index}
+            variants={fadeIn}
+            custom={index}
+            className="group relative flex-shrink-0 w-[150px] lg:w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+          >
+            <div className="aspect-square overflow-hidden bg-slate-100">
+              <Image
+                src={member.image || "/default.jpg"}
+                alt={member.name}
+                width={300}
+                height={300}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="relative p-2 lg:p-6 text-center lg:text-left">
+              <h3 className="lg:text-lg font-semibold text-slate-800">{member.name}</h3>
+              <p className="text-primary mt-1">{member.title}</p>
+
+              {/* Icons BELOW name on mobile, moved to top-right on hover for larger screens */}
+              <div className="flex justify-center lg:absolute lg:-top-10 lg:right-6 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-28 lg:group-hover:opacity-100">
+                {/* Mail Link */}
+                <Link
+                  href={`mailto:${member.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-7 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                 >
-                  <div className="aspect-square overflow-hidden bg-slate-100">
-                    <Image
-                      src={member.image || "/default.jpg"}
-                      alt={member.name}
-                      width={300}
-                      height={300}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="relative p-6">
-                    <div className="absolute -top-10 right-6 flex space-x-2 opacity-0 transition-all duration-300 group-hover:top-6 group-hover:opacity-100">
-                      <button className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
-                        <Mail className="h-4 w-4" />
-                      </button>
-                      <button className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
-                        <Linkedin className="h-4 w-4" />
-                      </button>
-                    </div>
-                    <h3 className="lg:text-xl font-semibold text-slate-800">{member.name}</h3>
-                    <p className="text-primary mt-1">{member.title}</p>
-                    <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                      <button className="flex items-center text-sm text-slate-600 hover:text-primary">
-                        View Profile <ChevronUp className="ml-1 h-4 w-4 rotate-90" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </AnimatedSection>
+                  <Mail className="h-3 w-3 lg:h-4 lg:w-4" />
+                </Link>
+
+                {/* LinkedIn Link */}
+                <Link
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-7 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                >
+                  <Linkedin className="h-3 w-3 lg:h-4 lg:w-4" />
+                </Link>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                <Link href={`/team/${member.id}`} className="flex items-center text-sm text-slate-600 hover:text-primary">
+                  View Profile <ChevronUp className="ml-1 h-4 w-4 rotate-90" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</AnimatedSection>
 
       {/* Stats Section */}
       <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-[#3674B5] text-white">
