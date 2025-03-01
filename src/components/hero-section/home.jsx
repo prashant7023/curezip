@@ -418,7 +418,7 @@ export default function Home() {
               <p className="text-primary mt-1">{member.title}</p>
 
               {/* Icons BELOW name on mobile, moved to top-right on hover for larger screens */}
-              <div className="flex justify-center lg:absolute lg:-top-10 lg:right-6 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-28 lg:group-hover:opacity-100">
+              <div className="flex justify-center lg:absolute lg:-top-10 lg:right-3 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-27 lg:group-hover:opacity-100">
                 {/* Mail Link */}
                 <Link
                   href={`mailto:${member.email}`}
