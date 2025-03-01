@@ -84,15 +84,15 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-[#3674B5] mr-3 mt-1 flex-shrink-0" />
                 <span className="text-gray-400">CureZip Pharma Private Limited, Gurugram, Haryana, India</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-[#3674B5] mr-3 flex-shrink-0" />
                 <span className="text-gray-400">+91 1234567890</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-[#3674B5] mr-3 flex-shrink-0" />
                 <span className="text-gray-400">info@curezip.in</span>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-4">Stay updated with our latest products and news</p>
             <div className="flex flex-col space-y-3">
               <Input type="email" placeholder="Your email address" className="bg-gray-800 border-gray-700 text-white" />
-              <Button className="bg-blue-600 hover:bg-blue-700 w-full">Subscribe</Button>
+              <Button className="bg-[#3674B5]  w-full">Subscribe</Button>
             </div>
           </div>
         </div>

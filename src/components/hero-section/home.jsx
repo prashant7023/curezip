@@ -140,117 +140,114 @@ export default function Home() {
   }, [statsInView])
 
   return (
-    <div className="flex flex-col min-h-screen bg-blue-100">
-      {/* Hero Section */}
-      <section className="relative h-[72vh] flex items-center bg-blue-100">
-        <motion.div
-          className="absolute inset-0 z-0 w-full h-full md:h-[500px] lg:h-[600px]"
-          style={{ y: heroY, opacity: heroOpacity }}
+    <div className="flex flex-col min-h-screen bg-[#f2f9fd]">
+   {/* Hero Section */}
+<section className="relative h-screen flex items-center bg-[#f2f9fd]">
+  <div 
+    className="absolute inset-0 z-0 w-full h-full bg-fixed"
+    style={{
+      backgroundImage: "url('/main.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  ></div>
+
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="max-w-3xl text-white"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.h1
+        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        Caring Beyond Healthcare
+      </motion.h1>
+      <motion.p
+        className="text-xl md:text-2xl mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        Making world-class affordable medicines accessible to everyone
+      </motion.p>
+      <motion.div
+        className="flex flex-col sm:flex-row gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <Link
+          href="/products"
+          className="bg-[#3674B5] hover:bg-[#2b6fb7] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
         >
-          <Image
-            src="/img1.jpeg"
-            alt="Healthcare professional holding medication"
-            fill
-            className="object-cover brightness-[0.7] md:brightness-100 lg:brightness-[0.8]"
-            priority
-          />
-        </motion.div>
+          Discover Our Products
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="max-w-3xl text-white"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Caring Beyond Healthcare
-            </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Making world-class affordable medicines accessible to everyone
-            </motion.p>
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Link
-                href="/products"
-                className="bg-blue-600 hover:bg-blue-700 transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
-              >
-                Discover Our Products
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+        <Link
+          href="/about"
+          className="bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
+        >
+          About Us
+        </Link>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
-              <Link
-                href="/about"
-                className="bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
-              >
-                About Us
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+{/* Mission & Vision Section */}
+<AnimatedSection className="py-20 bg-[#f2f9fd] relative">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.h2 className="text-3xl font-bold mb-6 text-gray-900" variants={fadeInUp}>
+          Our Vision
+        </motion.h2>
+        <motion.div className="h-1 w-20 bg-[#3674B5] mb-6" variants={fadeInUp}></motion.div>
+        <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
+          We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
+          of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
+          anything.
+        </motion.p>
+        <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
+          And that is why our pursuit of helping people achieve their best health at every life stage will never
+          end. This is how we put that belief into practice every and each day.
+        </motion.p>
+      </motion.div>
+      <motion.div
+        className="relative w-full max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-2xl"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <Image
+          src="/image2.png"
+          alt="Our vision"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 600px"
+          className="object-cover drop-shadow-2xl"
+          priority
+        />
+      </motion.div>
+    </div>
+  </div>
+</AnimatedSection>
 
-      {/* Mission & Vision Section */}
-      <AnimatedSection className="py-10 bg-blue-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <motion.h2 className="text-3xl font-bold mb-6 text-gray-900" variants={fadeInUp}>
-                Our Vision
-              </motion.h2>
-              <motion.div className="h-1 w-20 bg-blue-600 mb-6" variants={fadeInUp}></motion.div>
-              <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
-                We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
-                of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
-                anything.
-              </motion.p>
-              <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
-                And that is why our pursuit of helping people achieve their best health at every life stage will never
-                end. This is how we put that belief into practice every and each day.
-              </motion.p>
-            </motion.div>
-            <motion.div
-              className="relative w-full max-w-[600px] h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden shadow-2xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <Image
-                src="/main.jpg"
-                alt="Our vision"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 600px"
-                className="object-cover drop-shadow-2xl"
-                priority
-              />
-            </motion.div>
-
-          </div>
-        </div>
-      </AnimatedSection>
 
       {/* Core Values Section */}
-      <AnimatedSection className="py-20 bg-blue-100">
+      <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
           <motion.div
             className="text-center mb-16"
@@ -260,7 +257,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Core Values</h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-[#3674B5] mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               At CureZip Pharma, our values guide everything we do - from research and development to manufacturing and
               distribution.
@@ -275,10 +272,10 @@ export default function Home() {
             viewport={{ once: true, amount: 0.1 }}
           >
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
-                    <HeartPulse className="h-6 w-6 text-blue-600" />
+                  <div className="bg-[#f2f9fd] p-3 rounded-full w-fit mb-4">
+                    <HeartPulse className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Patient-Centric</h3>
                   <p className="text-gray-700">
@@ -289,10 +286,10 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
-                    <Award className="h-6 w-6 text-blue-600" />
+                  <div className="bg-[#f2f9fd] p-3 rounded-full w-fit mb-4">
+                    <Award className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Excellence</h3>
                   <p className="text-gray-700">
@@ -303,10 +300,10 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-blue-200">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
-                    <Microscope className="h-6 w-6 text-blue-600" />
+                  <div className="bg-[#f2f9fd] p-3 rounded-full w-fit mb-4">
+                    <Microscope className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Innovation</h3>
                   <p className="text-gray-700">
@@ -320,18 +317,18 @@ export default function Home() {
       </AnimatedSection>
 
       {/* About Section */}
-      <AnimatedSection className="py-20 bg-blue-100">
+      <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              className="order-2 lg:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl"
+              className="order-2 max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full relative  rounded-lg overflow-hidden shadow-xl"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <Image
-                src="/Image-2.jpg?height=800&width=1200"
+                src="/Image-2.jpg"
                 alt="CureZip Pharma facility"
                 fill
                 className="object-cover"
@@ -345,7 +342,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">The Brand</h2>
-              <div className="h-1 w-20 bg-blue-600 mb-6"></div>
+              <div className="h-1 w-20 bg-[#3674B5] mb-6"></div>
               <p className="text-lg text-gray-700 mb-6">
                 CureZip Pharma is a Gurugram based pharmaceutical company established in 2020 with the vision of making
                 world-class affordable medicines.
@@ -364,7 +361,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Team Section */}
-      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-blue-100">
+      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
         <div className="container px-4 mx-auto">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-12"
@@ -430,7 +427,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Stats Section */}
-      <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-blue-700 text-white">
+      <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-[#3674B5] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center"
@@ -478,7 +475,7 @@ export default function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <AnimatedSection className="py-20 bg-blue-100">
+      <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -488,7 +485,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">What Healthcare Professionals Say</h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-[#3674B5] mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Trusted by healthcare professionals across the country
             </p>
@@ -527,11 +524,11 @@ export default function Home() {
                 custom={index}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-blue-200">
+                <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white">
                   <CardContent className="p-6">
                     <div className="flex flex-col h-full">
                       <motion.div
-                        className="text-blue-600 mb-4"
+                        className="text-[#3674B5] mb-4"
                         initial={{ rotate: -10, opacity: 0 }}
                         whileInView={{ rotate: 0, opacity: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -567,10 +564,10 @@ export default function Home() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-20 bg-blue-100">
+      <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-blue-600 rounded-xl p-8 md:p-12 shadow-xl"
+            className="bg-[#3674B5] rounded-xl p-8 md:p-12 shadow-xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -590,26 +587,26 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                    <Button size="lg" className="bg-white text-[#3674B5] hover:bg-gray-100">
                       Contact Our Team
                     </Button>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button size="lg" variant="outline" className="bg-blue-600 text-white hover:bg-blue-600">
+                    <Button size="lg" variant="outline" className="bg-[#3674B5] text-white hover:bg-[#3674B5]">
                       Download Brochure
                     </Button>
                   </motion.div>
                 </div>
               </motion.div>
               <motion.div
-                className="relative h-[300px] rounded-lg overflow-hidden"
+                className="relative max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-lg overflow-hidden"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
                 <Image
-                  src="/Healthcare.png?height=600&width=800"
+                  src="/Healthcare.png"
                   alt="Healthcare professionals"
                   fill
                   className="object-cover"
@@ -622,7 +619,7 @@ export default function Home() {
 
       {/* Scroll to top button */}
       <motion.button
-        className={`fixed bottom-8 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed bottom-8 right-8 p-3 rounded-full bg-[#3674B5] text-white shadow-lg z-50 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           } transition-opacity duration-300`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         whileHover={{ scale: 1.1 }}
