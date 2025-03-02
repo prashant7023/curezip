@@ -49,7 +49,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-12 w-48">
+            <div className="relative h-12 w-28">
               <Image
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"
@@ -127,7 +127,7 @@ export default function Header() {
               <div className="flex flex-col h-full pl-5 bg-white">
                 {/* Logo in Mobile Menu */}
                 <div className="flex items-center justify-between mb-8 pt-4">
-                  <div className="relative h-10 w-40">
+                  <div className="relative h-10 w-26">
                     <Image
                       src="/Curezip-logo.png?height=100&width=200"
                       alt="CureZip Pharma Logo"

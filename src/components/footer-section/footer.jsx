@@ -11,12 +11,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="relative h-12 w-48 mb-6">
+            <div className="relative h-12 mb-6">
               <Image
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"
                 fill
-                className="object-contain "
+                className="object-contain brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 mb-6">

@@ -172,7 +172,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              className="text-3xl md:text-6xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -180,7 +180,7 @@ export default function Home() {
               Caring Beyond Healthcare
             </motion.h1>
             <motion.p
-              className="text-xl md:text-2xl mb-8"
+              className="text-lg md:text-2xl mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -195,7 +195,7 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className="bg-[#3674B5] hover:bg-[#266cb6] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
+                className=" bg-[#3674B5] text-base lg:text-xl hover:bg-[#266cb6] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
               >
                 Discover Our Products
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -203,7 +203,7 @@ export default function Home() {
 
               <Link
                 href="/about"
-                className="bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
+                className="text-base lg:text-xl bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
               >
                 About Us
               </Link>
