@@ -131,3 +131,7 @@
 *{
   scroll-behavior: smooth;
 }
+body {
+  font-family: "Johnson Display", Helvetica, Arial, sans-serif;
+}
+

@@ -26,13 +26,7 @@ export default function Header() {
     { name: "About", href: "/about" },
     {
       name: "Products",
-      href: "/products",
-      submenu: [
-        { name: "Cardiology", href: "/products/cardiology" },
-        { name: "Diabetes", href: "/products/diabetes" },
-        { name: "Neurology", href: "/products/neurology" },
-        { name: "General Health", href: "/products/general-health" },
-      ],
+      href: "/products"
     },
     { name: "Team", href: "/team" },
     { name: "Career", href: "/career" },
