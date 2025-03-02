@@ -6,11 +6,9 @@ import HeaderComponent from "@/components/header-section/header";
 export default function Home() {
   return (
     <div>
-      <HeaderComponent/>
       <main>
         <HomeComponent/>
       </main>
-      <FooterComponent/>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "luc
 export default function Footer() {
   return (
     <footer id="contact" className=" text-white bg-zinc-900 w-full">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
+      <div className="text-sm lg:text-base container mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
@@ -16,7 +16,7 @@ export default function Footer() {
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"
                 fill
-                className="object-contain brightness-0 invert"
+                className="object-contain "
               />
             </div>
             <p className="text-gray-400 mb-6">

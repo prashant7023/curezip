@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion"
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [openSubmenus, setOpenSubmenus] = useState({})
+  const [isSheetOpen, setIsSheetOpen] = useState(false) // New state to control sheet visibility
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,7 +113,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" className="lg:hidden p-2">
                 <Menu className={`h-6 w-6 ${isScrolled ? "text-gray-800" : "text-white"}`} />
@@ -173,6 +174,7 @@ export default function Header() {
                                     key={subitem.name}
                                     href={subitem.href}
                                     className="block text-gray-600 hover:text-[#3674B5]"
+                                    onClick={() => setIsSheetOpen(false)} // Close sheet on click
                                   >
                                     {subitem.name}
                                   </Link>
@@ -185,6 +187,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           className="font-medium text-lg text-gray-900 hover:text-[#3674B5]"
+                          onClick={() => setIsSheetOpen(false)} // Close sheet on click
                         >
                           {item.name}
                         </Link>
@@ -192,17 +195,6 @@ export default function Header() {
                     </div>
                   ))}
                 </nav>
-
-                {/* Mobile Contact Button */}
-                <div className="mt-auto pt-10 pb-3 m-5">
-                  <Link
-                    href="#contact"
-                    className="flex items-center justify-center w-full px-4 py-3 text-white bg-[#3674B5] hover:bg-[#266cb6] rounded-md transition duration-200 shadow-md"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Get in Touch
-                  </Link>
-                </div>
               </div>
             </SheetContent>
           </Sheet>

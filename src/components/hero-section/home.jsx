@@ -511,7 +511,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">What Healthcare Professionals Say</h2>
-            <div className="h-1 w-20 bg-[#3674B5] mx-auto mb-6"></div>
+            <div className="h-1 w-20 C mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Trusted by healthcare professionals across the country
             </p>
