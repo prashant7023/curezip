@@ -226,12 +226,12 @@ export default function Home() {
                 Our Vision
               </motion.h2>
               <motion.div className="h-1 w-20 bg-[#3674B5] mb-6" variants={fadeInUp}></motion.div>
-              <motion.p className="text-lg text-gray-700 mb-6" variants={fadeInUp}>
+              <motion.p className="text-base lg:text-lg text-gray-700 mb-6" variants={fadeInUp}>
                 We are dedicated to fulfilling the promise of human potential, in all places, in all aspects and stages
                 of life. We believe that health is the key to that promise. Because at our healthiest, we can achieve
                 anything.
               </motion.p>
-              <motion.p className="text-lg text-gray-700" variants={fadeInUp}>
+              <motion.p className="text-base lg:text-lg text-gray-700" variants={fadeInUp}>
                 And that is why our pursuit of helping people achieve their best health at every life stage will never
                 end. This is how we put that belief into practice every and each day.
               </motion.p>
@@ -269,7 +269,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Our Core Values</h2>
             <div className="h-1 w-20 bg-[#3674B5] mx-auto mb-6"></div>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-base lg:text-lg text-gray-700 max-w-3xl mx-auto">
               At CureZip Pharma, our values guide everything we do - from research and development to manufacturing and
               distribution.
             </p>
@@ -284,12 +284,12 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
-                <CardContent className="p-6">
-                  <div className="bg-[#f2f9fd] p-3 rounded-full w-fit mb-4">
+                <CardContent className="p-5 lg:p-6">
+                  <div className="bg-[#f2f9fd] lg:p-3 rounded-full w-fit mb-4">
                     <HeartPulse className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Patient-Centric</h3>
-                  <p className="text-gray-700">
+                  <p className="text-base lg:text-lg text-gray-700">
                     We put patients at the center of everything we do, ensuring our medicines improve lives.
                   </p>
                 </CardContent>
@@ -303,7 +303,7 @@ export default function Home() {
                     <Award className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Excellence</h3>
-                  <p className="text-gray-700">
+                  <p className="text-base lg:text-lg text-gray-700">
                     We strive for excellence in quality, safety, and efficacy in all our products.
                   </p>
                 </CardContent>
@@ -317,7 +317,7 @@ export default function Home() {
                     <Microscope className="h-6 w-6 text-[#3674B5]" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Innovation</h3>
-                  <p className="text-gray-700">
+                  <p className="text-base lg:text-lg text-gray-700">
                     We continuously innovate to develop better treatments and improve healthcare outcomes.
                   </p>
                 </CardContent>
@@ -354,15 +354,15 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">The Brand</h2>
               <div className="h-1 w-20 bg-[#3674B5] mb-6"></div>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-base lg:text-lg text-gray-700 mb-6">
                 CureZip Pharma is a Gurugram based pharmaceutical company established in 2020 with the vision of making
                 world-class affordable medicines.
               </p>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-base lg:text-lg text-gray-700 mb-6">
                 We have been founded brick by brick on the cornerstone of treatment. "Caring Beyond Healthcare" has
                 always been and will continue to be our driving intent.
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-base lg:text-lg text-gray-700">
                 We are expanding our reach in the key developing markets in India to make services more accessible
                 across the country.
               </p>
@@ -371,86 +371,86 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-{/* Team Section */}
-<AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
-  <div className="container px-4 mx-auto">
-    <motion.div
-      className="max-w-3xl mx-auto text-center mb-12"
-      variants={fadeInUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <h2 className="text-4xl font-bold tracking-tight text-slate-800 mb-6">Our Team</h2>
-      <p className="text-lg text-slate-600 leading-relaxed">
-        The management team of Curezip Pharma came together with a common motive to serve humanity. The team is
-        keen to discover new possibilities and are always eager to adopt innovative approaches. Individuals of our
-        team play critical roles in the clinical discovery of several major drugs.
-      </p>
-    </motion.div>
-
-    <div className="relative w-full lg:text-lg text-sm">
-      <motion.div
-        className="flex lg:space-x-6 space-x-2 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
-        variants={staggerChildren}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      >
-        {teamMembers.map((member, index) => (
+      {/* Team Section */}
+      <AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
+        <div className="container px-4 mx-auto">
           <motion.div
-            key={index}
-            variants={fadeIn}
-            custom={index}
-            className="group relative flex-shrink-0 w-[150px] lg:w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+            className="max-w-3xl mx-auto text-center mb-12"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="aspect-square overflow-hidden bg-slate-100">
-              <Image
-                src={member.image || "/default.jpg"}
-                alt={member.name}
-                width={300}
-                height={300}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="relative p-2 lg:p-6 text-center lg:text-left">
-              <h3 className="lg:text-lg font-semibold text-slate-800">{member.name}</h3>
-              <p className="text-primary mt-1">{member.title}</p>
-
-              <div className="flex justify-center lg:absolute lg:-top-10 lg:right-3 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-27 lg:group-hover:opacity-100">
-                {/* Mail Link */}
-                <Link
-                  href={`mailto:${member.email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-7 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
-                  <Mail className="h-3 w-3 lg:h-4 lg:w-4" />
-                </Link>
-
-                {/* LinkedIn Link */}
-                <Link
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-7 w-7 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-                >
-                  <Linkedin className="h-3 w-3 lg:h-4 lg:w-4" />
-                </Link>
-              </div>
-
-              <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                <Link href={`/team/${member.id}`} className="flex items-center text-sm text-slate-600 hover:text-primary">
-                  View Profile <ChevronUp className="ml-1 h-4 w-4 rotate-90" />
-                </Link>
-              </div>
-            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 mb-6">Our Team</h2>
+            <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
+              The management team of Curezip Pharma came together with a common motive to serve humanity. The team is
+              keen to discover new possibilities and are always eager to adopt innovative approaches. Individuals of our
+              team play critical roles in the clinical discovery of several major drugs.
+            </p>
           </motion.div>
-        ))}
-      </motion.div>
-    </div>
-  </div>
-</AnimatedSection>
+
+          <div className="relative w-full lg:text-lg text-sm">
+            <motion.div
+              className="flex lg:space-x-6 space-x-2 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+              variants={staggerChildren}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeIn}
+                  custom={index}
+                  className="group relative flex-shrink-0 w-[150px] lg:w-[220px] overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg snap-start"
+                >
+                  <div className="aspect-square overflow-hidden bg-slate-100">
+                    <Image
+                      src={member.image || "/default.jpg"}
+                      alt={member.name}
+                      width={300}
+                      height={300}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="relative p-2 lg:p-6 text-center lg:text-left">
+                    <h3 className="lg:text-lg font-semibold text-slate-800">{member.name}</h3>
+                    <p className="text-primary mt-1">{member.title}</p>
+
+                    <div className="flex justify-center lg:absolute lg:-top-10 lg:right-3 space-x-2 mt-3 lg:mt-0 lg:opacity-0 transition-all duration-300 lg:group-hover:top-27 lg:group-hover:opacity-100">
+                      {/* Mail Link */}
+                      <Link
+                        href={`mailto:${member.email}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-8 w-8 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                      >
+                        <Mail className="h-3 w-3 lg:h-4 lg:w-4" />
+                      </Link>
+
+                      {/* LinkedIn Link */}
+                      <Link
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-8 w-8 lg:h-9 lg:w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+                      >
+                        <Linkedin className="h-3 w-3 lg:h-4 lg:w-4" />
+                      </Link>
+                    </div>
+
+                    <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                      <Link href={`/team/${member.id}`} className="flex items-center text-sm text-slate-600 hover:text-primary">
+                        View Profile <ChevronUp className="ml-1 h-4 w-4 rotate-90" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* Stats Section */}
       <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-[#3674B5] text-white">
@@ -510,15 +510,15 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">What Healthcare Professionals Say</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-gray-900">What Healthcare Professionals Say</h2>
             <div className="h-1 w-20 C mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Trusted by healthcare professionals across the country
+              Trusted by healthcare professionals across the country.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="text-base lg:text-lg grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={staggerChildren}
             initial="hidden"
             whileInView="visible"
@@ -593,7 +593,7 @@ export default function Home() {
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-[#3674B5] rounded-xl p-8 md:p-12 shadow-xl"
+            className="bg-[#3674B5] rounded-xl p-6 lg:p-8 md:p-12 shadow-xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -608,7 +608,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl font-bold mb-4">Ready to Partner With Us?</h2>
-                <p className="text-xl mb-6">
+                <p className="text-lg lg:text-xl mb-6">
                   Join our network of healthcare professionals and institutions to provide better healthcare solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">

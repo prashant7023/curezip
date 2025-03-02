@@ -36,7 +36,7 @@ export default function Header() {
     },
     { name: "Team", href: "/team" },
     { name: "Career", href: "/career" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "#contact" },
   ]
 
   return (
