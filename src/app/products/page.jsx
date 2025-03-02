@@ -56,7 +56,7 @@ export default function ProductsPage() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 230" className="text-[#f2f9fd]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250" className="text-[#f2f9fd]">
             <path
               fill="currentColor"
               fillOpacity="1"

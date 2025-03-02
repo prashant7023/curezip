@@ -195,7 +195,7 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className=" bg-[#3674B5] text-base lg:text-xl hover:bg-[#266cb6] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
+                className=" bg-[#3674B5] text-base lg:text-lg hover:bg-[#266cb6] transition duration-300 cursor-pointer px-6 py-3 rounded-lg text-white flex items-center"
               >
                 Discover Our Products
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -203,7 +203,7 @@ export default function Home() {
 
               <Link
                 href="/about"
-                className="text-base lg:text-xl bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
+                className="text-base lg:text-lg bg-white/10 backdrop-blur-sm text-white border border-white hover:bg-white/20 px-6 py-3 rounded-lg"
               >
                 About Us
               </Link>
