@@ -62,36 +62,43 @@ export default function CareerPage() {
         variants={staggerContainer}
         className="py-16 md:py-24 container mx-auto px-4"
       >
-        <motion.div variants={fadeIn} className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-[#266cb6] mb-6 inline-block relative">
-            Career Opportunities
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#266cb6] rounded"></span>
-          </h2>
+        <motion.div
+          variants={fadeIn}
+          className="flex flex-col md:flex-row items-center md:items-start gap-12 max-w-6xl mx-auto mb-16"
+        >
 
-          <motion.p variants={fadeIn} className="text-gray-700 leading-relaxed mb-8">
-            Learn, discover, invent, and watch your career evolve at an accelerated rate. Work for a highly creative
-            group of like-minded individuals. Be a member of the team that guarantees the manufacture and delivery of
-            high-quality goods. During our weekly squad trips, you can get to know your teammates better.
-          </motion.p>
+          {/* Career Content - Right */}
+          <motion.div variants={fadeIn} className="w-full md:w-1/2">
+            <h2 className="text-3xl font-bold text-[#266cb6] mb-6 inline-block relative">
+              Career Opportunities
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-[#266cb6] rounded"></span>
+            </h2>
 
-          <motion.p variants={fadeIn} className="text-gray-700 leading-relaxed">
-            Enjoy a smooth combination between your career and personal lives.
-          </motion.p>
+            <motion.p variants={fadeIn} className="text-gray-700 leading-relaxed mb-4">
+              Learn, discover, invent, and watch your career evolve at an accelerated rate. Work for a highly creative
+              group of like-minded individuals. Be a member of the team that guarantees the manufacture and delivery of
+              high-quality goods. During our weekly squad trips, you can get to know your teammates better.
+            </motion.p>
+
+            <motion.p variants={fadeIn} className="text-gray-700 leading-relaxed">
+              Enjoy a smooth combination between your career and personal lives.
+            </motion.p>
+          </motion.div>
+
+                    {/* Career Image - Left */}
+                    <motion.div variants={fadeIn} className="w-full md:w-1/2">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/career-img.png?height=400&width=800"
+                alt="Curezip Pharma Team Collaboration"
+                width={800}
+                height={400}
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
         </motion.div>
 
-
-        {/* Career Image */}
-        <motion.div variants={fadeIn} className="mb-16">
-          <div className="rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/career.png?height=400&width=800"
-              alt="Curezip Pharma Team Collaboration"
-              width={800}
-              height={400}
-              className="w-full h-auto"
-            />
-          </div>
-        </motion.div>
 
         {/* Open Positions */}
         {/* <motion.div variants={fadeIn} className="mb-16">
