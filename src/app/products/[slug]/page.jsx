@@ -6,86 +6,7 @@ import Image from "next/image"
 import { ArrowLeft, ChevronRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import { motion } from "framer-motion"
-
-// Product data (same as in products page)
-const products = [
-    {
-        id: 1,
-        name: "CARNYMP-Q10",
-        slug: "carnymp-q10",
-        // image: "/products/carnymp-q10.png",
-        shortDescription: "L-Carnitine, Ubiquinone & Selenium Softgel Capsules",
-        fullDescription:
-            "CARNYMP-Q10 combines L-Carnitine, Ubiquinone (Coenzyme Q10), and Selenium in softgel capsules to support heart health, energy production, and antioxidant protection.",
-        composition: "Each softgel capsule contains L-Carnitine, Ubiquinone (Coenzyme Q10), and Selenium.",
-        indications: "Supports cardiovascular health, energy metabolism, and provides antioxidant protection.",
-        dosage: "As directed by healthcare professional.",
-    },
-    {
-        id: 2,
-        name: "CURECIUM",
-        slug: "curecium",
-        // image: "/products/curecium.png",
-        shortDescription: "Calcium & Calcitriol Softgel Capsules",
-        fullDescription:
-            "CURECIUM softgel capsules contain Calcium and Calcitriol to support bone health, calcium absorption, and overall skeletal system maintenance.",
-        composition: "Each softgel capsule contains Calcium and Calcitriol (Vitamin D3).",
-        indications: "For prevention and treatment of calcium deficiency, osteoporosis, and vitamin D deficiency.",
-        dosage: "As directed by healthcare professional.",
-    },
-    {
-        id: 3,
-        name: "RD-BEST DSR",
-        slug: "rd-best-dsr",
-        // image: "/products/rd-best-dsr.png",
-        shortDescription: "Rabeprazole Sodium (EC) & Domperidone (SR) Capsules",
-        fullDescription:
-            "RD-BEST DSR combines Rabeprazole Sodium (enteric-coated) and Domperidone (sustained-release) for comprehensive management of gastric disorders.",
-        composition: "Each capsule contains Rabeprazole Sodium (EC) and Domperidone (SR).",
-        indications:
-            "For treatment of gastroesophageal reflux disease (GERD), peptic ulcers, and related gastric disorders.",
-        dosage: "As directed by healthcare professional.",
-    },
-    {
-        id: 4,
-        name: "TBR HEAL-D",
-        slug: "tbr-heal-d",
-        // image: "/products/tbr-heal-d.png",
-        shortDescription: "Trypsin, Bromelain, Rutoside Trihydrate & Diclofenac Sodium Tablets",
-        fullDescription:
-            "TBR HEAL-D combines proteolytic enzymes (Trypsin and Bromelain) with Rutoside Trihydrate and Diclofenac Sodium to provide anti-inflammatory and analgesic effects.",
-        composition: "Each tablet contains Trypsin, Bromelain, Rutoside Trihydrate, and Diclofenac Sodium.",
-        indications:
-            "For management of pain and inflammation in various conditions including post-operative states, injuries, and inflammatory disorders.",
-        dosage: "As directed by healthcare professional.",
-    },
-    {
-        id: 5,
-        name: "TBR HEAL-FORTE",
-        slug: "tbr-heal-forte",
-        // image: "/products/tbr-heal-forte.png",
-        shortDescription: "Trypsin, Bromelain & Rutoside Trihydrate Tablets",
-        fullDescription:
-            "TBR HEAL-FORTE contains proteolytic enzymes (Trypsin and Bromelain) with Rutoside Trihydrate to provide anti-inflammatory effects without NSAID components.",
-        composition: "Each tablet contains Trypsin, Bromelain, and Rutoside Trihydrate.",
-        indications:
-            "For management of inflammation and edema in various conditions including post-operative states, injuries, and inflammatory disorders.",
-        dosage: "As directed by healthcare professional.",
-    },
-    {
-        id: 6,
-        name: "FEROZIP",
-        slug: "ferozip",
-        // image: "/products/ferozip.png",
-        shortDescription: "Ferrous Ascorbate, Folic Acid & Zinc Tablets",
-        fullDescription:
-            "FEROZIP combines Ferrous Ascorbate with Folic Acid and Zinc to provide comprehensive support for iron deficiency anemia and overall hematological health.",
-        composition: "Each tablet contains Ferrous Ascorbate, Folic Acid, and Zinc.",
-        indications:
-            "For prevention and treatment of iron deficiency anemia, especially during pregnancy and other high-demand states.",
-        dosage: "As directed by healthcare professional.",
-    },
-]
+import products from "../../../data/products"
 
 export default function ProductPage({ params }) {
     // Unwrap the promise to get the params object
@@ -170,8 +91,6 @@ export default function ProductPage({ params }) {
                 </div>
             </motion.section>
 
-
-
             {/* Product Details */}
             <motion.div
                 initial="hidden"
@@ -232,6 +151,15 @@ export default function ProductPage({ params }) {
                             <motion.div variants={itemVariant}>
                                 <h2 className="text-xl font-semibold text-gray-900 mb-3">Dosage</h2>
                                 <p className="text-gray-600">{product.dosage}</p>
+                            </motion.div>
+
+                            <motion.div variants={itemVariant}>
+                                <Link
+                                    href={`https://medihut-web.vercel.app/medicines/${product.slug}`}
+                                    className="inline-flex items-center px-6 py-3 bg-[#3674B5] text-white font-medium rounded-md hover:bg-[#2a5d91] transition-colors"
+                                >
+                                    Order Now
+                                </Link>
                             </motion.div>
                         </motion.div>
                     </motion.div>

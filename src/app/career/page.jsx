@@ -85,8 +85,7 @@ export default function CareerPage() {
             </motion.p>
           </motion.div>
 
-                    {/* Career Image - Left */}
-                    <motion.div variants={fadeIn} className="w-full md:w-1/2">
+          <motion.div variants={fadeIn} className="w-full md:w-1/2">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/career-img.png?height=400&width=800"
