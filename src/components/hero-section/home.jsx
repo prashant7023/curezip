@@ -304,7 +304,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">Excellence</h3>
                   <p className="text-base lg:text-lg text-gray-700">
-                    We strive for excellence in quality, safety, and efficacy in all our products.
+                  We strive for excellence in quality, safety, efficacy, reliability, and innovation in all our products.
                   </p>
                 </CardContent>
               </Card>

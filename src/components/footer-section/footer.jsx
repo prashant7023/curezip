@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="relative h-12 mb-6">
+            <div className="relative h-16 mb-4">
               <Image
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"
@@ -84,11 +84,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-[#3674B5] mr-3 flex-shrink-0" />
-                <span className="text-gray-400">+91 1234567890</span>
+                <span className="text-gray-400">+91-9431943147</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#3674B5] mr-3 flex-shrink-0" />
-                <span className="text-gray-400">info@curezip.in</span>
+                <span className="text-gray-400">contactus@curezip.in</span>
               </li>
             </ul>
           </div>
