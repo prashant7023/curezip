@@ -68,7 +68,7 @@ export default function ProductsPage() {
       </motion.section>
 
       {/* Products Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+      <div className="w-full mx-auto px-4 py-16 md:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -89,15 +89,13 @@ export default function ProductsPage() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
         >
-          {products.map((product) => (
-            <motion.div key={product.id} variants={itemVariant}>
-              <Link
-                href={`/products/${product.slug}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full"
-              >
-                <div className="relative h-64 bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] p-6 flex items-center justify-center">
+          {products.map((product) => {
+            const productUrl = `https://medihut-web.vercel.app/medicines/${encodeURIComponent(product.name)}`;
+            return (
+              <motion.div key={product.id} variants={itemVariant} className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <Link href={`/products/${product.slug}`} className="relative h-64 bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] p-6 flex items-center justify-center">
                   <Image
                     src={product.image || "/placeholder.svg?height=200&width=200"}
                     alt={product.name}
@@ -105,19 +103,24 @@ export default function ProductsPage() {
                     height={200}
                     className="object-contain max-h-52 transform group-hover:scale-105 transition-transform duration-300"
                   />
-                </div>
+                </Link>
                 <div className="p-6 flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#3674B5] transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{product.shortDescription}</p>
-                  <div className="flex items-center text-[#3674B5] font-medium">
-                    View Details <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
                 </div>
-              </Link>
-            </motion.div>
-          ))}
+                <div className="flex items-center justify-between p-6">
+                  <Link href={`/products/${product.slug}`} className="text-[#3674B5] flex items-center font-medium">
+                    View Details <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link href={productUrl} className="inline-flex items-center px-4 py-2 bg-[#3674B5] text-white font-medium rounded-md hover:bg-[#2a5d91] transition-colors">
+                    Buy Now
+                  </Link>
+                </div>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
 

@@ -1,17 +1,17 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className=" text-white bg-zinc-900 w-full">
-      <div className="text-sm lg:text-base container mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
+    <footer id="contact" className="text-white bg-zinc-900 w-full">
+      <div className="text-sm lg:text-base container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div>
-            <div className="relative h-16 mb-4">
+          <div className="flex flex-col items-start">
+            <div className="relative h-18 mb-4 w-44 flex justify-start">
               <Image
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"
@@ -99,7 +99,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-4">Stay updated with our latest products and news</p>
             <div className="flex flex-col space-y-3">
               <Input type="email" placeholder="Your email address" className="bg-gray-800 border-gray-700 text-white" />
-              <Button className="bg-[#3674B5]  w-full">Subscribe</Button>
+              <Button className="bg-[#3674B5] w-full">Subscribe</Button>
             </div>
           </div>
         </div>
@@ -124,6 +124,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
