@@ -3,8 +3,70 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import products from "../../data/products"
+import { useState, useEffect } from "react"
+
+const ProductImageCarousel = ({ images, productName }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (isHovered) {
+      interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % 4);
+      }, 2000);
+    }
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  // Get all available images
+  const allImages = [
+    images.image,
+    images.image2,
+    images.image3,
+    images.image4,
+  ].filter(Boolean);
+
+  return (
+    <div 
+      className="relative h-64 bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] p-6"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImageIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="absolute inset-0 flex items-center justify-center p-6"
+        >
+          <Image
+            src={allImages[currentImageIndex] || "/placeholder.svg?height=200&width=200"}
+            alt={`${productName} - Image ${currentImageIndex + 1}`}
+            width={200}
+            height={200}
+            className="object-contain max-h-52 transform group-hover:scale-105 transition-transform duration-300"
+          />
+        </motion.div>
+      </AnimatePresence>
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
+        {allImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
+              index === currentImageIndex ? 'w-3 bg-[#3674B5]' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function ProductsPage() {
   const fadeIn = {
@@ -68,7 +130,7 @@ export default function ProductsPage() {
       </motion.section>
 
       {/* Products Section */}
-      <div className="w-full mx-auto px-4 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -89,20 +151,18 @@ export default function ProductsPage() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {products.map((product) => {
             const productUrl = `https://medihut-web.vercel.app/medicines/${encodeURIComponent(product.name)}`;
             return (
-              <motion.div key={product.id} variants={itemVariant} className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-                <Link href={`/products/${product.slug}`} className="relative h-64 bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] p-6 flex items-center justify-center">
-                  <Image
-                    src={product.image || "/placeholder.svg?height=200&width=200"}
-                    alt={product.name}
-                    width={200}
-                    height={200}
-                    className="object-contain max-h-52 transform group-hover:scale-105 transition-transform duration-300"
-                  />
+              <motion.div 
+                key={product.id} 
+                variants={itemVariant} 
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              >
+                <Link href={`/products/${product.slug}`}>
+                  <ProductImageCarousel images={product} productName={product.name} />
                 </Link>
                 <div className="p-6 flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#3674B5] transition-colors">

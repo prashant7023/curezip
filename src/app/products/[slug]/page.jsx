@@ -1,12 +1,75 @@
 "use client"
 
-import { use } from "react"
+import { use, useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, ChevronRight } from "lucide-react"
 import { notFound } from "next/navigation"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import products from "../../../data/products"
+
+const ProductImageCarousel = ({ images, productName }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        let interval;
+        if (isHovered) {
+            interval = setInterval(() => {
+                setCurrentImageIndex((prev) => (prev + 1) % images.length);
+            }, 2000);
+        }
+        return () => clearInterval(interval);
+    }, [isHovered, images.length]);
+
+    // Get all available images
+    const allImages = [
+        images.image,
+        images.image2,
+        images.image3,
+        images.image4,
+    ].filter(Boolean);
+
+    return (
+        <div 
+            className="relative bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] rounded-xl p-8"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="relative w-full max-w-md mx-auto">
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={currentImageIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="relative aspect-square"
+                    >
+                        <Image
+                            src={allImages[currentImageIndex] || "/placeholder.svg?height=400&width=400"}
+                            alt={`${productName} - Image ${currentImageIndex + 1}`}
+                            width={400}
+                            height={400}
+                            className="object-contain mx-auto"
+                        />
+                    </motion.div>
+                </AnimatePresence>
+            </div>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {allImages.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                            index === currentImageIndex ? 'w-6 bg-[#3674B5]' : 'w-2 bg-gray-300'
+                        }`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
 
 export default function ProductPage({ params }) {
     // Unwrap the promise to get the params object
@@ -99,20 +162,9 @@ export default function ProductPage({ params }) {
                 className="max-w-7xl mx-auto px-4 py-12 md:py-16"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Product Image */}
-                    <motion.div
-                        variants={fadeIn}
-                        className="bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] rounded-xl p-8 flex items-center justify-center"
-                    >
-                        <div className="relative w-full max-w-md mx-auto">
-                            <Image
-                                src={product.image || "/placeholder.svg?height=400&width=400"}
-                                alt={product.name}
-                                width={400}
-                                height={400}
-                                className="object-contain mx-auto"
-                            />
-                        </div>
+                    {/* Product Image Carousel */}
+                    <motion.div variants={fadeIn}>
+                        <ProductImageCarousel images={product} productName={product.name} />
                     </motion.div>
 
                     {/* Product Info */}
