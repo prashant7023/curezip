@@ -137,7 +137,10 @@ export default function ProductPage({ params }) {
                                 Products
                             </Link>
                             <ChevronRight className="h-4 w-4" />
-                            <span className="text-gray-900 font-medium">{product.name}</span>
+                            <span className="text-gray-900 font-medium">
+                                {product.name}™®
+                                {/* <sup className="ml-1 text-xs">™</sup><sup className="ml-0.5 text-xs">®</sup> */}
+                            </span>
                         </div>
                     </motion.div>
                 </div>
@@ -178,7 +181,10 @@ export default function ProductPage({ params }) {
                                 Back to Products
                             </Link>
 
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                                {product.name}™®
+                                {/* <sup className="ml-1 text-xs">™</sup><sup className="ml-0.5 text-xs">®</sup> */}
+                            </h1>
                             <p className="text-xl text-gray-600 mb-6">{product.shortDescription}</p>
 
                             <div className="w-16 h-1 bg-[#3674B5] mb-8"></div>
@@ -248,6 +254,7 @@ export default function ProductPage({ params }) {
                                     <div className="p-6">
                                         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#3674B5] transition-colors">
                                             {relatedProduct.name}
+                                            <sup className="ml-1 text-xs">™</sup><sup className="ml-0.5 text-xs">®</sup>
                                         </h3>
                                         <p className="text-sm text-gray-600">{relatedProduct.shortDescription}</p>
                                     </div>

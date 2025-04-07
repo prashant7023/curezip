@@ -167,6 +167,7 @@ export default function ProductsPage() {
                 <div className="p-6 flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#3674B5] transition-colors">
                     {product.name}
+                    <sup className="ml-1 text-xs">™</sup><sup className="ml-0.5 text-xs">®</sup>
                   </h3>
                   <p className="text-gray-600 mb-4">{product.shortDescription}</p>
                 </div>
