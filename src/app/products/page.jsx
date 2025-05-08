@@ -45,7 +45,7 @@ const ProductImageCarousel = ({ images, productName }) => {
           className="absolute inset-0 flex items-center justify-center p-6"
         >
           <Image
-            src={allImages[currentImageIndex] || "/placeholder.svg?height=200&width=200"}
+            src={allImages[currentImageIndex] || "https://lh3.googleusercontent.com/d/1rXUi5eWiJK3fO3OTS23ETLdRzo3ujozW"}
             alt={`${productName} - Image ${currentImageIndex + 1}`}
             width={200}
             height={200}
@@ -154,7 +154,8 @@ export default function ProductsPage() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {products.map((product) => {
-            const productUrl = `https://medihut-web.vercel.app/medicines/${encodeURIComponent(product.name)}`;
+            // Properly encode product name with lowercase letters for URL
+            const productUrl = `https://medihut.in/medicines/${encodeURIComponent(product.name.toLowerCase())}`;
             return (
               <motion.div 
                 key={product.id} 
@@ -162,7 +163,7 @@ export default function ProductsPage() {
                 className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full"
               >
                 <Link href={`/products/${product.slug}`}>
-                  <ProductImageCarousel images={product} productName={product.name} />
+                  <ProductImageCarousel images={product } productName={product.name} />
                 </Link>
                 <div className="p-6 flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#3674B5] transition-colors">

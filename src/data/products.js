@@ -1,15 +1,15 @@
 const products = [
     {
         id: 1,
-        name: "CarnyMP Q10",
-        slug: "carnymp-q10",
+        name: "CarnyME Q10",
+        slug: "carnyme-q10",
         shortDescription: "Advanced cardiac support supplement with Coenzyme Q10",
-        image: "/products/carnymp-q10-1.jpg",
-        image2: "/products/carnymp-q10-2.jpg",
-        image3: "/products/carnymp-q10-3.jpg",
-        image4: "/products/carnymp-q10-4.jpg",
+        image: "/products/carnyme-q10-1.jpg" ,
+        image2: "/products/carnyme-q10-2.jpg",
+        image3: "/products/carnyme-q10-3.jpg",
+        image4: "/products/carnyme-q10-4.jpg",
         fullDescription:
-            "CARNYMP-Q10 combines L-Carnitine, Ubiquinone (Coenzyme Q10), and Selenium in softgel capsules to support heart health, energy production, and antioxidant protection.",
+            "CARNYME-Q10 combines L-Carnitine, Ubiquinone (Coenzyme Q10), and Selenium in softgel capsules to support heart health, energy production, and antioxidant protection.",
         composition: "Each softgel capsule contains L-Carnitine, Ubiquinone (Coenzyme Q10), and Selenium.",
         indications: "Supports cardiovascular health, energy metabolism, and provides antioxidant protection.",
         dosage: "As directed by healthcare professional.",

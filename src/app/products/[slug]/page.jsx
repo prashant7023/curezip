@@ -47,7 +47,7 @@ const ProductImageCarousel = ({ images, productName }) => {
                         className="relative aspect-square"
                     >
                         <Image
-                            src={allImages[currentImageIndex] || "/placeholder.svg?height=400&width=400"}
+                            src={allImages[currentImageIndex] || "https://lh3.googleusercontent.com/d/1rXUi5eWiJK3fO3OTS23ETLdRzo3ujozW"}
                             alt={`${productName} - Image ${currentImageIndex + 1}`}
                             width={400}
                             height={400}
@@ -213,7 +213,7 @@ export default function ProductPage({ params }) {
 
                             <motion.div variants={itemVariant}>
                                 <Link
-                                    href={`https://medihut-web.vercel.app/medicines/${product.slug}`}
+                                    href={`https://medihut.in/medicines/${encodeURIComponent(product.name.toLowerCase())}`}
                                     className="inline-flex items-center px-6 py-3 bg-[#3674B5] text-white font-medium rounded-md hover:bg-[#2a5d91] transition-colors"
                                 >
                                     Order Now
@@ -244,7 +244,7 @@ export default function ProductPage({ params }) {
                                 >
                                     <div className="relative h-48 bg-gradient-to-br from-[#ecf8ff] to-[#e1f4ff] p-6 flex items-center justify-center">
                                         <Image
-                                            src={relatedProduct.image || "/placeholder.svg?height=150&width=150"}
+                                            src={relatedProduct.image || "https://lh3.googleusercontent.com/d/1rXUi5eWiJK3fO3OTS23ETLdRzo3ujozW"}
                                             alt={relatedProduct.name}
                                             width={150}
                                             height={150}

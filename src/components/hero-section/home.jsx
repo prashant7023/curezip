@@ -406,7 +406,7 @@ export default function Home() {
                 >
                   <div className="aspect-square overflow-hidden bg-slate-100">
                     <Image
-                      src={member.image || "/default.jpg"}
+                      src={member.image || "/default-user.jpg"}
                       alt={member.name}
                       width={300}
                       height={300}
@@ -504,50 +504,82 @@ export default function Home() {
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-10"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-gray-900">What Healthcare Professionals Say</h2>
-            <div className="h-1 w-20 C mx-auto mb-6"></div>
+            <div className="h-1 w-20 bg-[#3674B5] mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Trusted by healthcare professionals across the country.
             </p>
           </motion.div>
 
-          <motion.div
-            className="text-base lg:text-lg grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerChildren}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                name: "Dr. Sharma",
-                role: "Cardiologist",
+                name: "Dr. Amit Anand",
+                role: "MBBS, MD (NEW DELHI)",
                 quote:
-                  "CureZip's cardiovascular medications have shown remarkable efficacy in my patients with minimal side effects.",
+                  "Curezip's medicines is very efficacious & pocket friendly.",
               },
               {
-                name: "Dr. Patel",
-                role: "Endocrinologist",
+                name: "Dr. V. P. Singh",
+                role: "MBBS, D.O. & M.S (Uttar Pardesh) ",
                 quote:
-                  "The diabetes management solutions from CureZip have helped my patients achieve better glycemic control consistently.",
+                  "Profoundly pleased with the offerings of CUREIP PHARMA, specifically the ZIPCLAVE-625 and PARADOWN-SP, as well as the professionalism of the curezip's team.",
               },
               {
-                name: "Dr. Gupta",
-                role: "Neurologist",
+                name: "Dr. Urmila Singh",
+                role: "MBBS Bihar",
                 quote:
-                  "I've seen significant improvements in patients using CureZip's neurological products. Their quality is exceptional.",
+                  "CARNYME Q-10 constitutes an exceptionally commendable product, demonstrating notable efficacy in alleviating muscular cramps and pre-stress conditions.",
+              },
+              {
+                name: "Dr. Nivedita Bharti",
+                role: "MBBS, MS & Gynae FMAS (New Delhi)",
+                quote:
+                  "CARNYME Q-10 & ZIPNEXA MF are economically accessible for patients, demonstrating commendable efficacy.",
+              },
+              {
+                name: "Dr. A.K JHA",
+                role: "MBBS (Sitamarhi, Bihar)",
+                quote:
+                  "CARNYME Q-10 and ZIPNEXA MF present a cost-effective solution for patients, while demonstrating commendable efficacy.",
+              },
+              {
+                name: "Dr. P. Tuti",
+                role: "MBBS (L.N.M.U) Madhepura, Bihar",
+                quote:
+                  "CARNYME Q-10 is a very good product. This product's efficiency is good and the company representatives are excellent.",
+              },
+              {
+                name: "Dr. Ashok Kumar",
+                role: "MBBS, D.Ortho, D.N.B Ortho, (New Delhi)",
+                quote:
+                  "NAVAVIT & TBR HEAL FORTE are best in domain & pocket-friendly products.",
+              },
+              {
+                name: "Dr. Amit Kumar",
+                role: "Consultant Neurosurgeon (Sasaram, Bihar)",
+                quote:
+                  "Both NAVAVIT & TBR HEAL FORTE are good products.",
+              },
+              {
+                name: "Dr. Ravindra Kumar",
+                role: "MBBS, M.S. (Ranchi, Jharkhand)",
+                quote:
+                  "CARNYME Q-10 is a very good product. This product's efficiency is good and the company representatives are excellent.",
               },
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
-                custom={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
                 <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white">
@@ -585,7 +617,7 @@ export default function Home() {
                 </Card>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </AnimatedSection>
 

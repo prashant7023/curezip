@@ -132,7 +132,7 @@ export default function TeamPage() {
                                 >
                                     <div className="aspect-square overflow-hidden rounded-xl">
                                         <Image
-                                            src={member.image || "/default.jpg"}
+                                            src={member.image || "https://lh3.googleusercontent.com/d/1rXUi5eWiJK3fO3OTS23ETLdRzo3ujozW"}
                                             alt={member.name}
                                             width={400}
                                             height={400}
