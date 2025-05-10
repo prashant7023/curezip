@@ -56,13 +56,13 @@ export default function AboutPage() {
         </div>
         <div className="container mx-auto px-4 py-20 relative z-10">
           <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">About Curezip Pharma</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">About Curezip Pharma</h1>
             <p className="text-xl text-white/90">Caring Beyond Healthcare</p>
           </motion.div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 230" className="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 230" className="text-[#f2f9fd]">
             <path
               fill="currentColor"
               fillOpacity="1"

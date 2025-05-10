@@ -339,7 +339,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <Image
-                src="/Image-2.jpg"
+                src="/team/team7.JPG"
                 alt="CureZip Pharma facility"
                 fill
                 className="object-cover"
@@ -413,7 +413,7 @@ export default function Home() {
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="relative p-2 lg:p-6 text-center lg:text-left">
+                  <div className="relative p-2 lg:p-5 text-center lg:text-left">
                     <h3 className="lg:text-lg font-semibold text-slate-800">{member.name}</h3>
                     <p className="text-primary mt-1">{member.title}</p>
 
@@ -440,7 +440,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-4 pt-4 border-t border-slate-100 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                      <Link href={`/team/${member.id}`} className="flex items-center text-sm text-slate-600 hover:text-primary">
+                      <Link href={`/team`} className="flex items-center text-sm text-slate-600 hover:text-primary">
                         View Profile <ChevronUp className="ml-1 h-4 w-4 rotate-90" />
                       </Link>
                     </div>

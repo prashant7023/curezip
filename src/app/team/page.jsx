@@ -1,8 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { Linkedin, Mail } from "lucide-react"
+import { useState } from "react"
 
 
 export default function TeamPage() {
@@ -41,7 +42,7 @@ export default function TeamPage() {
         {
             name: "Mr. Amit Kumar ",
             position: "Marketing Head",
-            bio: "Is a dynamic and experienced professional in the pharma industries with a combined experience of two decades. His foresight and balanced thought process are an inspiration to others. He is highly focused and strongly determined. In his current role, he oversees Curezip Pharma’s Sales and Marketing.",
+            bio: "Is a dynamic and experienced professional in the pharma industries with a combined experience of two decades. His foresight and balanced thought process are an inspiration to others. He is highly focused and strongly determined. In his current role, he oversees Curezip Pharma's Sales and Marketing.",
             image: "",
         },
         {
@@ -64,35 +65,49 @@ export default function TeamPage() {
         },
     ]
 
+    // Add state for lightbox
+    const [lightboxIndex, setLightboxIndex] = useState(null)
+    const galleryImages = [
+        { src: '/team/team1.JPG', alt: 'Team member 1' },
+        { src: '/team/team2.JPG', alt: 'Team member 2' },
+        { src: '/team/team3.JPG', alt: 'Team member 3' },
+        { src: '/team/team4.JPG', alt: 'Team member 4' },
+        { src: '/team/team5.jpg', alt: 'Team member 5' },
+        { src: '/team/team6.jpg', alt: 'Team member 6' },
+        { src: '/team/team7.JPG', alt: 'Team member 7' },
+        { src: '/team/team4.JPG', alt: 'Team member 8' },
+    ]
+
     return (
         <div className="bg-[#f2f9fd]">
             {/* Hero Section - Same design as About page */}
             <motion.section
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
-                className="relative bg-gradient-to-r from-[#f2f9fd]  to-[#3674B5]  overflow-hidden"
-            >
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-20"></div>
-                </div>
-                <div className="container mx-auto px-4 py-20 relative z-10">
-                    <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Team</h1>
-                        <p className="text-xl text-white/90">Meet the experts behind Curezip Pharma</p>
-                    </motion.div>
-                </div>
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        className="relative bg-gradient-to-r from-[#f2f9fd]  to-[#3674B5] overflow-hidden"
+      >
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-20"></div>
+        </div>
+        <div className="container mx-auto px-4 py-20 relative z-10">
+          <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Team</h1>
+            <p className="text-xl text-white/90">Meet the experts behind Curezip Pharma</p>
+          </motion.div>
+        </div>
 
-                <div className="absolute bottom-0 left-0 right-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 230" className="text-white">
-                        <path
-                            fill="currentColor"
-                            fillOpacity="1"
-                            d="M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,197.3C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-                        ></path>
-                    </svg>
-                </div>
-            </motion.section>
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 230" className="text-[#f2f9fd]">
+            <path
+              fill="currentColor"
+              fillOpacity="1"
+              d="M0,224L80,213.3C160,203,320,181,480,181.3C640,181,800,203,960,197.3C1120,192,1280,160,1360,144L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+      </motion.section>
+
 
             {/* Team Introduction */}
             <motion.section
@@ -132,7 +147,7 @@ export default function TeamPage() {
                                 >
                                     <div className="aspect-square overflow-hidden rounded-xl">
                                         <Image
-                                            src={member.image || "https://lh3.googleusercontent.com/d/1rXUi5eWiJK3fO3OTS23ETLdRzo3ujozW"}
+                                            src={member.image || "/default-user.jpg"}
                                             alt={member.name}
                                             width={400}
                                             height={400}
@@ -266,16 +281,17 @@ export default function TeamPage() {
                 </motion.div>
 
                 <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {[...Array(8)].map((_, index) => (
+                    {galleryImages.map((image, index) => (
                         <motion.div
                             key={index}
                             variants={fadeIn}
                             whileHover={{ scale: 1.05, zIndex: 10 }}
-                            className="overflow-hidden rounded-xl shadow-md"
+                            className="overflow-hidden rounded-xl shadow-md cursor-pointer"
+                            onClick={() => setLightboxIndex(index)}
                         >
                             <Image
-                                src={`/placeholder.svg?height=${300 + index * 20}&width=${300 + index * 20}`}
-                                alt={`Team gallery image ${index + 1}`}
+                                src={image.src}
+                                alt={image.alt}
                                 width={300}
                                 height={300}
                                 className="w-full h-full object-cover aspect-square"
@@ -283,6 +299,64 @@ export default function TeamPage() {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {/* Lightbox Modal with improved positioning and animation */}
+                <AnimatePresence>
+                {lightboxIndex !== null && (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        onClick={() => setLightboxIndex(null)}
+                    >
+                        {/* Cross button in top-right of screen */}
+                        <button
+                            className="fixed top-4 right-4 text-white bg-black/60 rounded-full p-2 hover:bg-black/80 z-50"
+                            onClick={() => setLightboxIndex(null)}
+                            aria-label="Close"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                        <div className="relative max-w-3xl w-full mx-4 flex items-center justify-center" onClick={e => e.stopPropagation()}>
+                            {/* Left button - centered vertically, left of image */}
+                            <button
+                                className="absolute left-0 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80 z-20"
+                                style={{ transform: 'translateY(-50%) translateX(-50%)' }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setLightboxIndex((lightboxIndex + galleryImages.length - 1) % galleryImages.length);
+                                }}
+                                aria-label="Previous"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            {/* Right button - centered vertically, right of image */}
+                            <button
+                                className="absolute right-0 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80 z-20"
+                                style={{ transform: 'translateY(-50%) translateX(50%)' }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setLightboxIndex((lightboxIndex + 1) % galleryImages.length);
+                                }}
+                                aria-label="Next"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </button>
+                            <div className="flex items-center justify-center min-h-[400px] max-h-[80vh]">
+                                <Image
+                                    src={galleryImages[lightboxIndex].src}
+                                    alt={galleryImages[lightboxIndex].alt}
+                                    width={900}
+                                    height={700}
+                                    className="object-contain max-h-[80vh] w-auto mx-auto rounded-xl shadow-2xl bg-white"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+                </AnimatePresence>
             </motion.section>
         </div>
     )
