@@ -36,7 +36,7 @@ export default function CareerPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-20"></div>
         </div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="container mx-auto px-2 py-20 relative z-10">
           <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Team</h1>
             <p className="text-xl text-white/90">Shape the future of healthcare with Curezip Pharma</p>
@@ -60,7 +60,7 @@ export default function CareerPage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-16 md:py-24 container mx-auto px-4"
+        className="py-16 md:py-24 container mx-auto px-2"
       >
         <motion.div
           variants={fadeIn}

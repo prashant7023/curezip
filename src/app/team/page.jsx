@@ -90,7 +90,7 @@ export default function TeamPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-20"></div>
         </div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="container mx-auto px-2 py-20 relative z-10">
           <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Team</h1>
             <p className="text-xl text-white/90">Meet the experts behind Curezip Pharma</p>
@@ -115,7 +115,7 @@ export default function TeamPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={staggerContainer}
-                className="py-16 md:py-24 container mx-auto px-4"
+                className="py-16 md:py-24 container mx-auto px-2"
             >
                 <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-800 mb-6 inline-block relative">
@@ -196,7 +196,7 @@ export default function TeamPage() {
                 variants={fadeIn}
                 className="py-16 "
             >
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-2">
                     <div className="max-w-3xl mx-auto text-center mb-12">
                         <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-6 inline-block relative">
                             Our Values
@@ -267,7 +267,7 @@ export default function TeamPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={staggerContainer}
-                className="py-16 md:py-24 container mx-auto px-4"
+                className="py-16 md:py-24 container mx-auto px-2"
             >
                 <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center mb-16">
                     <h2 className="text-3xl font-bold text-gray-800 mb-6 inline-block relative">
@@ -280,7 +280,7 @@ export default function TeamPage() {
                     </motion.p>
                 </motion.div>
 
-                <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     {galleryImages.map((image, index) => (
                         <motion.div
                             key={index}

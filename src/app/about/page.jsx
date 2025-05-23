@@ -78,7 +78,7 @@ export default function AboutPage() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
-        className="py-16 md:py-24 container mx-auto px-4"
+        className="py-16 md:py-24 container mx-auto px-2"
       >
         <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center mb-16">
           <h2 className=" text-2xl lg:text-3xl font-bold text-gray-800 mb-6 inline-block relative">
@@ -94,7 +94,7 @@ export default function AboutPage() {
           </motion.p>
         </motion.div>
         {/* Icons Section */}
-        <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <motion.div variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-20">
           {[
             { icon: "flask", label: "Research" },
             { icon: "microscope", label: "Development" },
@@ -105,7 +105,7 @@ export default function AboutPage() {
               <motion.div
                 key={index}
                 variants={iconAnimation}
-                className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg p-5 text-center shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-[#80d0ff] rounded-full flex items-center justify-center">
                   <FontAwesomeIcon icon={icons[item.icon]} size="2x" className="text-white" />
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
     
         {/* Core Principles */}
-        <motion.div variants={fadeIn} className="bg-white rounded-2xl p-6 md:p-12 mb-16 shadow-md hover:shadow-lg transition-shadow">
+        <motion.div variants={fadeIn} className="bg-white rounded-2xl p-5 md:p-12 mb-16 shadow-md hover:shadow-lg transition-shadow">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 inline-block relative">
             Our Core Principles
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#f2f9fd]  rounded"></span>

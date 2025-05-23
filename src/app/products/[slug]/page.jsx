@@ -125,7 +125,7 @@ export default function ProductPage({ params }) {
                 </div>
 
                 {/* Main container */}
-                <div className="container relative mt-10 z-10 mx-auto px-4 py-20">
+                <div className="container relative mt-10 z-10 mx-auto px-2 py-20">
                     <motion.div variants={fadeIn} className="max-w-3xl text-left">
                         {/* Breadcrumb */}
                         <div className="flex items-center text-sm text-gray-600 space-x-2">
@@ -162,7 +162,7 @@ export default function ProductPage({ params }) {
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
-                className="max-w-7xl mx-auto px-4 py-12 md:py-16"
+                className="max-w-7xl mx-auto px-2 py-12 md:py-16"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     {/* Product Image Carousel */}
@@ -232,7 +232,7 @@ export default function ProductPage({ params }) {
                 variants={fadeIn}
                 className="bg-white py-16"
             >
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="max-w-7xl mx-auto px-2">
                     <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Related Products</h2>
 
                     <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-8">

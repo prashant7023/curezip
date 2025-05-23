@@ -164,7 +164,7 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-2 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-3xl text-white"
             initial={{ opacity: 0, y: 30 }}
@@ -214,7 +214,7 @@ export default function Home() {
 
       {/* Mission & Vision Section */}
       <AnimatedSection className="py-20 bg-[#f2f9fd] relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               variants={fadeInUp}
@@ -259,7 +259,7 @@ export default function Home() {
 
       {/* Core Values Section */}
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8 ">
           <motion.div
             className="text-center mb-16"
             variants={fadeInUp}
@@ -329,7 +329,7 @@ export default function Home() {
 
       {/* About Section */}
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               className="order-2 max-w-[600px] h-[180px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full relative  rounded-lg overflow-hidden shadow-xl"
@@ -373,7 +373,7 @@ export default function Home() {
 
       {/* Team Section */}
       <AnimatedSection className="py-16 bg-gradient-to-b from-white to-[#dbf2ff]">
-        <div className="container px-4 mx-auto">
+        <div className="container px-2 mx-auto">
           <motion.div
             className="max-w-3xl mx-auto text-center mb-12"
             variants={fadeInUp}
@@ -454,7 +454,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <div ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-[#3674B5] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <motion.div
             className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center"
             variants={staggerChildren}
@@ -502,7 +502,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-10"
             variants={fadeInUp}
@@ -623,9 +623,9 @@ export default function Home() {
 
       {/* CTA Section */}
       <AnimatedSection className="py-20 bg-[#f2f9fd]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <motion.div
-            className="bg-[#3674B5] rounded-xl p-6 lg:p-8 md:p-12 shadow-xl"
+            className="bg-[#3674B5] rounded-xl p-5 lg:p-8 md:p-12 shadow-xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

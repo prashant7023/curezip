@@ -8,10 +8,10 @@ export default function Footer() {
   return (
     <footer id="contact" className="text-white bg-zinc-900 w-full">
       <div className="text-sm lg:text-base container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="flex flex-col items-start">
-            <div className="relative h-18 mb-4 w-44 flex justify-start">
+            <div className="relative h-16 mb-4 w-40 flex justify-start">
               <Image
                 src="/Curezip-logo.png?height=100&width=200"
                 alt="CureZip Pharma Logo"

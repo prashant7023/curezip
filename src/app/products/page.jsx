@@ -109,10 +109,10 @@ export default function ProductsPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-20"></div>
         </div>
-        <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="container mx-auto px-2 py-20 relative z-10">
           <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Products</h1>
-            <p className="text-xl text-white/90">
+            <p className="text-lg md:text-xl text-white/90">
               Discover our range of high-quality pharmaceutical products designed to improve health and wellbeing
             </p>
           </motion.div>
@@ -130,7 +130,7 @@ export default function ProductsPage() {
       </motion.section>
 
       {/* Products Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-2 py-16 md:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -138,9 +138,9 @@ export default function ProductsPage() {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pharmaceutical Excellence</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Pharmaceutical Excellence</h2>
           <div className="w-24 h-1 bg-[#3674B5] mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             Our products are manufactured with the highest standards of quality and efficacy to ensure optimal health
             outcomes
           </p>
@@ -176,7 +176,7 @@ export default function ProductsPage() {
                   <Link href={`/products/${product.slug}`} className="text-[#3674B5] flex items-center font-medium">
                     View Details <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link href={productUrl} className="inline-flex items-center px-4 py-2 bg-[#3674B5] text-white font-medium rounded-md hover:bg-[#2a5d91] transition-colors">
+                  <Link href={productUrl} className="inline-flex items-center px-2 py-2 bg-[#3674B5] text-white font-medium rounded-md hover:bg-[#2a5d91] transition-colors">
                     Buy Now
                   </Link>
                 </div>
@@ -194,7 +194,7 @@ export default function ProductsPage() {
         variants={fadeIn}
         className="bg-[#e1f4ff] py-16"
       >
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-2 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Need More Information?</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Our team is ready to assist you with any questions about our products
